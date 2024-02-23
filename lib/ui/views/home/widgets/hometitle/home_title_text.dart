@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:landing/ui/common/ui_helpers.dart';
-import 'package:landing/ui/views/home/widgets/home_sub_title.dart';
-import 'package:landing/ui/views/home/widgets/home_title_header.dart';
-import 'package:landing/ui/views/home/widgets/home_title_btns.dart';
+import 'package:landing/ui/views/home/widgets/hometitle/home_sub_title.dart';
+import 'package:landing/ui/views/home/widgets/hometitle/home_title_btns.dart';
+import 'package:landing/ui/views/home/widgets/hometitle/home_title_header.dart';
 
 class HomeTitleText extends StatelessWidget {
   const HomeTitleText({super.key});

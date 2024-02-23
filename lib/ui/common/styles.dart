@@ -16,7 +16,7 @@ class Style {
   );
 
   static const bodyText = TextStyle(
-    fontSize: 20,
+    fontSize: 16,
     color: Color.fromRGBO(200, 200, 203, 1.000),
   );
 
@@ -25,7 +25,7 @@ class Style {
     color: Colors.white,
   );
   static const bodyTextWhite = TextStyle(
-    fontSize: 20,
+    fontSize: 16,
     color: Colors.white,
   );
 }

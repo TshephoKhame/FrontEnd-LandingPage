@@ -29,6 +29,7 @@ class MainApp extends StatelessWidget {
           textTheme: GoogleFonts.openSansTextTheme().apply(
             bodyColor: Colors.white,
           ),
+          scaffoldBackgroundColor: Colors.white,
           elevatedButtonTheme: const ElevatedButtonThemeData(
             style: ButtonStyle(
               padding: MaterialStatePropertyAll(

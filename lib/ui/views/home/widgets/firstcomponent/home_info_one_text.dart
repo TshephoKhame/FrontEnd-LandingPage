@@ -47,7 +47,6 @@ class FirstText extends StatelessWidget {
                   "Flexible content management enabkles user to easily move through posts, increase the usability of your blog by adding customized catagories, sections, format, or flow. With this functionality you are in full control.",
                   style: Style.bodyText,
                 ),
-                verticalSpaceLarge,
               ],
             ),
           ),
