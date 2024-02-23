@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:landing/ui/common/styles.dart';
 import 'package:landing/ui/common/ui_helpers.dart';
+import 'package:landing/ui/views/home/widgets/home_info_one_header.dart';
+import 'package:landing/ui/views/home/widgets/home_info_one_icon.dart';
+import 'package:landing/ui/views/home/widgets/home_info_one_text.dart';
 import 'package:landing/ui/views/home/widgets/home_title_bgC.dart';
 import 'package:landing/ui/views/home/widgets/home_title_bgI.dart';
 import 'package:landing/ui/views/home/widgets/home_title_text.dart';
@@ -29,79 +32,67 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               ],
             ),
           ),
+          const SizedBox(
+            child: Stack(
+              children: [
+                FirstText(),
+                FirstIcon(),
+                FirstHeader(),
+              ],
+            ),
+          ),
+          verticalSpaceLarge,
           SizedBox(
             child: Stack(
               children: [
+                // Positioned to center the text vertically and horizontally
                 Container(
                   clipBehavior: Clip.none,
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                    vertical: getResponsivePaddingSize(context),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(160),
+                    ),
+                    color: Color.fromRGBO(63, 65, 100, 1.000),
                   ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: getValueForScreenType(
-                            context: context,
-                            desktop: halfScreenWidth(context) +
-                                quarterScreenHeight(context),
-                            tablet: screenWidth(context) -
-                                quarterScreenHeight(context),
-                            mobile: screenWidth(context)),
-                        padding: const EdgeInsets.all(180),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            verticalSpaceLarge,
-                            Text(
-                              "Introducing an extensible editor",
-                              style: Style.subHeader,
-                            ),
-                            verticalSpaceMedium,
-                            Text(
-                              "Blogr features an exceedingly intuitive interface which lets you focus on one thing: create content. he editor supports management of multiple and allows easy manipulation of embeds such as images, videos, annd Markdown. Extensibility or change the looks of a blog.",
-                              style: Style.bodyText,
-                            ),
-                            verticalSpaceMedium,
-                            Text(
-                              "Robust content management",
-                              style: Style.subHeader,
-                            ),
-                            verticalSpaceMedium,
-                            Text(
-                              "Flexible content management enabkles user to easily move through posts, increase the usability of your blog by adding customized catagories, sections, format, or flow. With this functionality you are in full control.",
-                              style: Style.bodyText,
-                            ),
-                          ],
+                  height: screenHeight(context) / 2,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        left: thirdScreenWidth(context) + 100,
+                        right: 250), // Padding to offset text from the left
+
+                    child: const Column(
+                      mainAxisAlignment:
+                          MainAxisAlignment.center, // Center vertically
+                      crossAxisAlignment:
+                          CrossAxisAlignment.start, // Align text to the left
+                      children: [
+                        Text(
+                          "State of the Art Infrastructure",
+                          style: Style.headerWhite,
                         ),
-                      ),
-                    ],
+                        verticalSpaceMedium,
+                        Text(
+                          "With reliablility and speed in mind, worldwide data centers provide the backdoor for ultra-fast connectivity.This ensures your side will load instantly, no matter where your readers are keeping your site competitive.",
+                          style: Style.bodyTextWhite,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+                // Positioned to place the image overlapping the container
                 Positioned(
-                  width: halfScreenWidth(context),
-                  right: -200,
-                  top: 100,
+                  width: thirdScreenWidth(context), // One third of screen width
+                  left: 0,
+                  top: -100, // Slightly above the container
                   child: SvgPicture.asset(
-                    "assets/illustration-editor-desktop.svg",
+                    "assets/illustration-phones.svg",
                     allowDrawingOutsideViewBox: true,
                   ),
                 ),
-                Positioned(
-                  child: SizedBox(
-                    height: quarterScreenHeight(context),
-                    width: double.infinity,
-                    child: const Center(
-                      child: Text(
-                        "Designed for the future",
-                        style: Style.headerLarge,
-                      ),
-                    ),
-                  ),
-                )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
