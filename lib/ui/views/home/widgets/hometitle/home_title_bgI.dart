@@ -23,13 +23,25 @@ class HomeTitleImage extends StatelessWidget {
       allowDrawingOutsideViewBox: true,
     );
 
-    return ScreenTypeLayout.builder(
-      mobile: (_) => Positioned(
-          bottom: -screenHeight(context) * 1.9, left: 0, child: mobile),
-      desktop: (_) => Positioned(
-          bottom: -screenHeight(context) * 1.9,
-          left: -screenHeight(context) * 0.6,
-          child: desktop),
+    return Positioned(
+      bottom: -screenHeight(context) * 1.9,
+      left: -screenHeight(context) * 0.6,
+      child: ScreenTypeLayout.builder(
+        mobile: (_) => mobile,
+        desktop: (_) => desktop,
+      ),
     );
   }
 }
+
+// return Positioned(
+//       bottom: -screenHeight(context) * 1.9,
+//       left: -screenHeight(context) * 0.6,
+//       child: SvgPicture.asset(
+//         'assets/bg-pattern-intro-desktop.svg',
+//         alignment: Alignment.centerRight,
+//         width: screenHeight(context) * 4.8,
+//         height: screenHeight(context) * 4.8,
+//         allowDrawingOutsideViewBox: true,
+//       ),
+//     );

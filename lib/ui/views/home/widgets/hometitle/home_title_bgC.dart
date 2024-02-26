@@ -10,7 +10,7 @@ class HomeTitleBackgroundColor extends StatelessWidget {
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.8,
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(160)),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(120)),
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,

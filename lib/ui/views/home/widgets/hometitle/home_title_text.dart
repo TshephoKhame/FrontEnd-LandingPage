@@ -9,9 +9,10 @@ class HomeTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       width: double.infinity,
-      height: screenHeight(context) * 0.8,
+      height: screenHeight(context) * 0.8 - 100,
       child: Center(
         child: ListView(
           shrinkWrap: true,

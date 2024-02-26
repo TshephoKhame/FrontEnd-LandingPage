@@ -10,11 +10,12 @@ class FirstHeader extends StatelessWidget {
     return Positioned(
       child: SizedBox(
         height: quarterScreenHeight(context),
-        width: double.infinity,
+        width: screenWidth(context),
         child: const Center(
           child: Text(
             "Designed for the future",
             style: Style.headerLarge,
+            textAlign: TextAlign.center,
           ),
         ),
       ),
